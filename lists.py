@@ -298,9 +298,9 @@ def reverse_list_in_place(items):
     list.
     **Do not use** the python function `reversed()` or the method
     `list.reverse()`.
-    
+
     For example::
-    
+
         >>> orig = [1, 2, 3]
         >>> reverse_list_in_place(orig)
         >>> orig
@@ -310,34 +310,47 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
+    # len_list = len(items)
 
-    return []
+    # while i in range(len_list):
+    #     if i < len_list / 2:
+    #         swap_item = item[i]
+
+    # return []
 
 
 def duplicates(items):
     """Return list of words from input list which were duplicates.
     Return a list of words which are duplicated in the input list.
     The returned list should be in ascending order.
-   
+
     For example::
-   
+
         >>> duplicates(
         ...     ["apple", "banana", "banana", "cherry", "apple"]
         ... )
         ['apple', 'banana']
         >>> duplicates([1, 2, 2, 4, 4, 4, 7])
         [2, 4]
-   
+
     You should do this without changing the original list::
-   
+
         >>> orig = ["apple", "apple", "berry"]
         >>> duplicates(orig)
         ['apple']
         >>> orig
         ['apple', 'apple', 'berry']
     """
+    dupes = []
+    seen = []
+    for item in items:
+        if item not in seen:
+            seen.append(item)
+        elif item in seen:
+            if item not in dupes:
+                dupes.append(item)
 
-    return []
+    return sorted(dupes)
 
 
 def find_letter_indices(words, letter):
