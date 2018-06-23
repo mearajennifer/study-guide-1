@@ -194,34 +194,38 @@ def join_strings(words):
     """Return a string of all input strings joined together.
     Python has a built-in method, `list.join()` --- but for
     this exercise, **you should not use it**.
-    
+
     For example::
-    
+
         >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
         'spamspambaconballoonicorn'
-    
+
     For an empty list, you should return an empty string::
-    
+
         >>> join_strings([])
         ''
     """
+    string_of_strings = ""
 
-    return "Not the right thing"
+    for word in words:
+        string_of_strings = string_of_strings + word
+
+    return string_of_strings
 
 
 def average(numbers):
     """Return the average (mean) of the list of numbers given.
-    
+
     For example::
-    
+
         >>> average([2, 4])
         3.0
-    
+
     This should handle cases where the result isn't an integer::
-    
+
         >>> average([2, 12, 3])
         5.666666666666667
-    
+
     There is no defined answer if the list given is empty;
     it's fine if this raises an error when given an empty list.
     (Think of the best way to handle an empty input list, though,
