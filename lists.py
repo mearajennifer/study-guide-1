@@ -310,13 +310,15 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-    # len_list = len(items)
+    beginning = 0
+    end = len(items) - 1
 
-    # while i in range(len_list):
-    #     if i < len_list / 2:
-    #         swap_item = item[i]
-
-    # return []
+    while beginning < end:
+        temp_item = items[beginning]
+        items[beginning] = items[end]
+        items[end] = temp_item
+        beginning += 1
+        end -= 1
 
 
 def duplicates(items):
