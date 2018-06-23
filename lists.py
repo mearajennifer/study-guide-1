@@ -127,7 +127,7 @@ def halvesies(numbers):
         [0.5, 2.5]
     """
 
-    return []
+    return [(num * 0.5) for num in numbers]
 
 
 def word_lengths(words):
