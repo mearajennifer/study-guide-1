@@ -359,26 +359,36 @@ def find_letter_indices(words, letter):
     that correspond to the index of the first occurrence of the letter
     in that word.
     **DO NOT** use the `list.index()` method.
-    
+
     For example::
-    
+
         >>> find_letter_indices(['odd', 'dog', 'who'], 'o')
         [0, 1, 2]
-    
+
     ("o" is at index 0 in "odd", is at index 1 in "dog", and at
     index 2 in "who")
-    
+
     If the letter doesn't occur in one of the words, use `None` for
     that word in the output list. For example::
-    
+
         >>> find_letter_indices(['odd', 'dog', 'who', 'jumps'], 'o')
         [0, 1, 2, None]
-    
+
     ("o" does not appear in "jumps", so the result for that input is
     `None`.)
     """
 
-    return []
+    letter_indices_list = []
+
+    for word in words:
+        if letter not in word:
+                letter_indices_list.append(None)
+                continue
+        for i in range(len(word)):
+            if word[i] == letter:
+                letter_indices_list.append(i)
+                continue
+    return letter_indices_list
 
 
 #####################################################################
