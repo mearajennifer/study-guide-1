@@ -157,8 +157,11 @@ def sum_numbers(numbers):
         >>> sum_numbers([])
         0
     """
+    sum = 0
+    for num in numbers:
+        sum += num
 
-    return None
+    return sum
 
 
 def mult_numbers(numbers):
